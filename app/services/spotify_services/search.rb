@@ -4,7 +4,7 @@ module SpotifyServices
     def initialize(params)
       @limit = params[:limit] || 50
       @type = 'artist'
-      @query = params[:query]
+      @query = params[:query] || 'bon jovi'
     end
 
     def process
