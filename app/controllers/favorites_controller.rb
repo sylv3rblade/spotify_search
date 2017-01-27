@@ -1,7 +1,11 @@
 class FavoritesController < ApplicationController
 
   def create
-    render json: Favorite.create(favorite_params)
+    render json: Favorite.create(favorite_params), serializer: FavoriteSerializer
+  end
+
+  def show
+    render json: Favorite.find(1), serializer: FavoriteSerializer
   end
 
   private
