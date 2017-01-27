@@ -8,7 +8,8 @@ module SpotifyServices
     end
 
     def process
-      HTTParty.get("#{SEARCH_URL}/?#{query_string}")
+      result = HTTParty.get("#{SEARCH_URL}/?#{query_string}")
+      result['artists']['items']
     end
 
     private
